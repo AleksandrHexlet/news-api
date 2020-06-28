@@ -60,7 +60,9 @@ module.exports.login = (req, res, next) => {
             NODE_ENV === 'production' ? JWT_SECRET : 'JWT_SECRET',
             { expiresIn: '7d' },
           );
-          return res.send({ token });
+          // eslint-disable-next-line no-shadow
+          const { email, name } = newUser;
+          return res.send({ email, name, token });
         });
     })
     .catch(next);
