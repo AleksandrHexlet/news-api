@@ -25,6 +25,7 @@ const allowedCors = [
   'https://www.news-today.site',
   'http://www.news-today.site',
   'https://github.com/AleksandrHexlet',
+  'https://aleksandrhexlet.github.io/news-frontend/',
   'http://www.fotoshare.tk',
   'https://www.fotoshare.tk',
   'http://fotoshare.tk',
