@@ -5,15 +5,17 @@ const { IdNotFoundError } = require('../constructorError/error');
 
 
 module.exports.getArticles = (req, res, next) => {
+  const owner = req.user._id;
   article
-    .find({})
+    .find({ owner })
     .then((articles) => res.send({ data: articles }))
-    // .catch(next);
+  // .catch(next);
     .catch(() => {
       const err = new BadRequestError('Статьи не существуют');
       return next(err);
     });
 };
+
 
 module.exports.createArticles = (req, res, next) => {
   const owner = req.user._id;
