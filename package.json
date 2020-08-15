@@ -1,0 +1,51 @@
+{
+  "name": "news-service-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "pmStart": "cross-env NODE_ENV=production pm2 start app.js",
+    "pmRestart": "cross-env NODE_ENV=production pm2 restart app",
+    "start": "cross-env NODE_ENV=production node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "eslint": "eslint --ext=.js ./ --ignore-path .gitignore",
+    "eslintFix": "eslint --ext=.js ./ --ignore-path .gitignore --fix",
+    "inspect": "cross-env NODE_ENV=development node --inspect app.js",
+    "deployEnv": "scp .env alex@84.201.168.135:/home/alex/news-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandrHexlet/news-service-api.git"
+  },
+  "author": "Aleksandr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksandrHexlet/news-service-api/issues"
+  },
+  "homepage": "https://github.com/AleksandrHexlet/news-service-api#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "celebrate": "^12.1.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.1.3",
+    "express-winston": "^4.0.3",
+    "helmet": "^3.23.0",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.9",
+    "mongoose-unique-validator": "^2.0.3",
+    "validator": "^13.0.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.2"
+  },
+  "description": "Stack : Node.js; MongoDB; Express.js"
+}
